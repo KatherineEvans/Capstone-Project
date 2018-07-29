@@ -1,3 +1,34 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+
+    post "/login" => "sessions#create"
+
+    get "/travelers" => "users#index"
+    post "/travelers" => "users#create"
+    get "/travelers/:id" => "users#show"
+    patch "/travelers/:id" => "users#update"
+    delete "/travelers/:id" => "users#destroy"
+
+    get "/expenses" => "expenses#index"
+    post "/expenses" => "expenses#create"
+    get "/expenses/:id" => "expenses#show"
+    patch "/expenses/:id" => "expenses#update"
+    delete "/expenses/:id" => "expenses#destroy"
+
+    get "/itinerary" => "itineraries#index"
+    post "/itinerary" => "itineraries#create"
+    get "/itinerary/:id" => "itineraries#show"
+    patch "/itinerary/:id" => "itineraries#update"
+    delete "/itinerary/:id" => "itineraries#destroy"
+
+    get "/trip" => "trips#index"
+    post "/trip" => "trips#create"
+    get "/trip/:id" => "trips#show"
+    patch "/trip/:id" => "trips#update"
+    delete "/trip/:id" => "trips#destroy"
+
+    get "/category" => "categories#index"
+    post "/category" => "categories#create"
+
+  end
 end
