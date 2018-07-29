@@ -21,11 +21,11 @@ Rails.application.routes.draw do
     patch "/itinerary/:id" => "itineraries#update"
     delete "/itinerary/:id" => "itineraries#destroy"
 
-    get "/trip" => "trips#index"
-    post "/trip" => "trips#create"
-    get "/trip/:id" => "trips#show"
-    patch "/trip/:id" => "trips#update"
-    delete "/trip/:id" => "trips#destroy"
+    get "/trips" => "trips#index"
+    post "/trips" => "trips#create"
+    get "/trips/:id" => "trips#show"
+    patch "/trips/:id" => "trips#update"
+    delete "/trips/:id" => "trips#destroy"
 
     get "/category" => "categories#index"
     post "/category" => "categories#create"
