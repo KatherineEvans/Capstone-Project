@@ -1,7 +1,8 @@
 class Api::TripsController < ApplicationController
+  before_action :authenticate_user
   
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
     render "index.json.jbuilder"
   end
 

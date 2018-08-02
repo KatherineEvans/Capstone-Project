@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 
+  has_many :created_trips, class_name: "Trip"
   has_many :user_trips
   has_many :trips, through: :user_trips
   has_many :expenses

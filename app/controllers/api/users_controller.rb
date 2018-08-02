@@ -19,9 +19,23 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: params[:id])
+    render "show.json.jbuilder"
   end
 
   def update
+    @user = User.find_by(id: params[:id])
+    @user.first_name = params["first_name"] || @user.first_name
+    @user.last_name = params["last_name"] || @user.last_name
+    @user.email = params["email"] || @user.email
+    @user.password_digest = params["password_digest"] || @user.password_digest
+    @user.user_photo = params["user_photo"] || @user.user_photo
+  
+    if @user.save
+      render "show.json.jbuilder"
+    else
+      render json: {error: @user.errors.full_messages}, status: 404
+    end
   end
 
   def destroy
