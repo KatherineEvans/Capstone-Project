@@ -1,6 +1,10 @@
 class Api::UsersController < ApplicationController
+  before_action :authenticate_user
 
   def index
+    @users = User.all
+    @trips = current_user.trips
+    render "index.json.jbuilder"
   end
 
   def create
