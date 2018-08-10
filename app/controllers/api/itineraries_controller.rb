@@ -2,7 +2,7 @@ class Api::ItinerariesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @itineraries = current_user.itineraries
+    @trips = current_user.trips
     render "index.json.jbuilder"
   end
 

@@ -1,3 +1,4 @@
-json.Expenses @itineraries.each do |itinerary|
-  json.partial! "itineraries.json.jbuilder", itinerary: itinerary
+json.Expenses @trips.each do |trip|
+  json.Trip_Name trip.name
+  json.Itineraries trip.itineraries
 end

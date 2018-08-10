@@ -2,7 +2,7 @@ class Api::ExpensesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @expenses = Expense.where(user_id: current_user.id)
+    @expenses = current_user.expenses
     render "index.json.jbuilder"
   end
 
