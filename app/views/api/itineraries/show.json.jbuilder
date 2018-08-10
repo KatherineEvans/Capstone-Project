@@ -1,0 +1,1 @@
+json.partial! "itineraries.json.jbuilder", itinerary: @itinerary
