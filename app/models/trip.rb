@@ -4,4 +4,13 @@ class Trip < ApplicationRecord
   has_many :expenses
   has_many :itineraries
   belongs_to :planner, class_name: "User", foreign_key: "user_id" 
+
+
+  def friendly_start_date
+    start_date.strftime("%B %e, %Y")
+  end
+
+  def friendly_end_date
+    end_date.strftime("%B %e, %Y")
+  end
 end

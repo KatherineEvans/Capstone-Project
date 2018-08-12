@@ -1,8 +1,8 @@
 json.ID trip.id
-json.Name trip.name
-json.Start_date trip.start_date
-json.End_date trip.end_date
-json.Country trip.country
-json.State trip.state 
-json.City trip.city
-json.Planner trip.planner.full_name
+json.name trip.name
+json.start_date trip.friendly_start_date
+json.end_date trip.friendly_end_date
+json.country trip.country
+json.state trip.state 
+json.city trip.city
+json.planner trip.planner.full_name

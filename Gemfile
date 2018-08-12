@@ -27,6 +27,8 @@ gem 'jwt'
 
 gem 'figaro'
 
+gem 'rack-cors', require: 'rack/cors'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
