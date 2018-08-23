@@ -13,4 +13,13 @@ class Trip < ApplicationRecord
   def friendly_end_date
     end_date.strftime("%B %e, %Y")
   end
+
+  def personal_expenses
+    expenses.where(expense_type: "Personal")
+  end
+
+  def group_expenses
+    expenses.where(expense_type: "Group")
+  end
+  
 end

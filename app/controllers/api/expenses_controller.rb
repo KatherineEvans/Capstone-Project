@@ -2,7 +2,7 @@ class Api::ExpensesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @expenses = current_user.expenses
+    @expenses = current_user.expenses.order(date: :desc)
     render "index.json.jbuilder"
   end
 

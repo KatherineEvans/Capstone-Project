@@ -1,4 +1,4 @@
-json.Categories @categories.each do |category|
-  json.ID category.id 
-  json.Name category.name 
+json.categories @categories.each do |category|
+  json.id category.id 
+  json.name category.name 
 end

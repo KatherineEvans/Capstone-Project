@@ -1,9 +1,10 @@
-json.ID expense.id
-json.Amount expense.amount
-json.Description expense.description
-json.Category expense.category_id
-json.Trip expense.trip_id
-json.Photo expense.photo 
-json.Date expense.date
+json.id expense.id
+json.amount expense.amount
+json.description expense.description
+json.category_id expense.category_id
+json.trip expense.trip_id
+json.photo expense.photo 
+json.date expense.date
 json.activity expense.itinerary_id
-json.Expense_type expense.expense_type
+json.expense_type expense.expense_type
+# json.category json.category.name
