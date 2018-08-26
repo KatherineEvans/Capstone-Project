@@ -2,7 +2,8 @@ class Api::ItinerariesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @itineraries = Itinerary.all.order(trip_id: :desc)
+    # @itineraries = Itinerary.all.order(trip_id: :desc)
+    @itineraries = Trip.find_by(id: params[:id]).itineraries.order(trip_id: :desc)
     render "index.json.jbuilder"
   end
 

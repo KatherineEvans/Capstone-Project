@@ -15,11 +15,11 @@ Rails.application.routes.draw do
     patch "/expenses/:id" => "expenses#update"
     delete "/expenses/:id" => "expenses#destroy"
 
-    get "/itinerary" => "itineraries#index"
-    post "/itinerary" => "itineraries#create"
-    get "/itinerary/:id" => "itineraries#show"
-    patch "/itinerary/:id" => "itineraries#update"
-    delete "/itinerary/:id" => "itineraries#destroy"
+    get "/trips/:id/itinerary" => "itineraries#index"
+    post "/trips/:id/itinerary" => "itineraries#create"
+    get "/trips/:id/itinerary/:id" => "itineraries#show"
+    patch "/trips/:id/itinerary/:id" => "itineraries#update"
+    delete "/trips/:id/itinerary/:id" => "itineraries#destroy"
 
     get "/trips" => "trips#index"
     post "/trips" => "trips#create"
