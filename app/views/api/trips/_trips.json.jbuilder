@@ -20,6 +20,7 @@ end
 
 if current_user
   json.current_user_expenses trip.expenses.where(user_id: current_user.id).each do |expense|
+    json.id expense.id
     json.amount expense.amount
     json.date expense.date
     json.category_name expense.category.name
