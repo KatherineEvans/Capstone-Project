@@ -18,6 +18,16 @@ json.expenses trip.expenses.order("date asc").each do |expense|
   json.date expense.date
 end
 
+if current_user
+  json.current_user_expenses trip.expenses.where(user_id: current_user.id).each do |expense|
+    json.amount expense.amount
+    json.date expense.date
+    json.category_name expense.category.name
+    json.date expense.date
+    json.description expense.description
+  end
+end 
+
 json.group_expenses trip.group_expenses.order("category_id asc").each do |group_expense|
   json.group_id group_expense.id
   json.group_amount group_expense.amount
@@ -36,8 +46,23 @@ json.personal_expenses trip.personal_expenses.order("category_id asc").each do |
   json.personal_expense_type personal_expense.expense_type
 end
 
-json.current_user_personal_expenses trip.personal_expenses.where(user_id: current_user.id) if current_user
-json.current_user_group_expenses trip.group_expenses.where(user_id: current_user.id) if current_user
+if current_user
+  json.current_user_personal_expenses trip.personal_expenses.where(user_id: current_user.id).each do |expense|
+    json.amount expense.amount
+    json.date expense.date
+    json.category_name expense.category.name
+    json.expense_type expense.expense_type
+  end
+end
+
+if current_user
+  json.current_user_group_expenses trip.group_expenses.where(user_id: current_user.id).each do |expense|
+    json.amount expense.amount
+    json.date expense.date
+    json.category_name expense.category.name
+    json.expense_type expense.expense_type
+  end
+end
 
 json.itineraries trip.itineraries.order("time asc").each do |itinerary|
   json.itinerary_description itinerary.description

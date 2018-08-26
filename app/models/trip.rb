@@ -21,5 +21,5 @@ class Trip < ApplicationRecord
   def group_expenses
     expenses.where(expense_type: "Group")
   end
-  
+
 end
