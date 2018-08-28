@@ -18,6 +18,7 @@ class Api::TripsController < ApplicationController
     user_id: current_user.id
     )
     if @trip.save
+
       render "show.json.jbuilder"
     else
       render json: {error: @trip.errors.full_messages}, status: 404
