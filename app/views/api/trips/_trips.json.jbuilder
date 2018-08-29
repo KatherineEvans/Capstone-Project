@@ -16,6 +16,7 @@ json.expenses trip.expenses.order("date asc").each do |expense|
   json.description expense.description
   json.expense_type expense.expense_type
   json.date expense.date
+  json.payer expense.user.full_name
 end
 
 if current_user
