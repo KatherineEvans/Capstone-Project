@@ -20,12 +20,12 @@ json.expenses trip.expenses.order("date asc").each do |expense|
 end
 
 if current_user
-  json.current_user_expenses trip.expenses.where(user_id: current_user.id).each do |expense|
+  json.current_user_expenses trip.expenses.order("date asc").where(user_id: current_user.id).each do |expense|
     json.id expense.id
     json.amount expense.amount
     json.date expense.date
     json.category_name expense.category.name
-    json.date expense.date
+    json.expense_type expense.expense_type
     json.description expense.description
   end
 end 
@@ -49,7 +49,7 @@ json.personal_expenses trip.personal_expenses.order("category_id asc").each do |
 end
 
 if current_user
-  json.current_user_personal_expenses trip.personal_expenses.where(user_id: current_user.id).each do |expense|
+  json.current_user_personal_expenses trip.personal_expenses.order("date asc").where(user_id: current_user.id).each do |expense|
     json.amount expense.amount
     json.date expense.date
     json.category_name expense.category.name
@@ -58,7 +58,7 @@ if current_user
 end
 
 if current_user
-  json.current_user_group_expenses trip.group_expenses.where(user_id: current_user.id).each do |expense|
+  json.current_user_group_expenses trip.group_expenses.order("date asc").where(user_id: current_user.id).each do |expense|
     json.amount expense.amount
     json.date expense.date
     json.category_name expense.category.name
