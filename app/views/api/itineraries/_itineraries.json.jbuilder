@@ -3,3 +3,4 @@ json.trip_name itinerary.trip.name
 json.description itinerary.description
 json.time itinerary.friendly_time
 json.photo itinerary.photo
+json.show_image false

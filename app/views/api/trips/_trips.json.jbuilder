@@ -58,7 +58,7 @@ if current_user
 end
 
 if current_user
-  json.current_user_group_expenses trip.group_expenses.order("date asc").where(user_id: current_user.id).each do |expense|
+  json.current_user_group_expenses trip.group_expenses.order("category_id asc").where(user_id: current_user.id).each do |expense|
     json.amount expense.amount
     json.date expense.date
     json.category_name expense.category.name

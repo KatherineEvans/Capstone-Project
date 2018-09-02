@@ -4,4 +4,5 @@ json.itineraries @itineraries.each do |itinerary|
   json.description itinerary.description
   json.time itinerary.time
   json.photo itinerary.photo
+  json.show_image false
 end
