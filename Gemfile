@@ -28,6 +28,7 @@ gem 'jwt'
 gem 'figaro'
 
 gem 'rack-cors', require: 'rack/cors'
+
 gem 'twilio-ruby', '~> 5.12.3'
 
 # Use ActiveStorage variant
