@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     delete "/expenses/:id" => "expenses#destroy"
 
     get "/trips/:id/itinerary" => "itineraries#index"
-    post "/trips/:id/itinerary" => "itineraries#create"
+    post "/itinerary" => "itineraries#create"
     get "/trips/:id/itinerary/:id" => "itineraries#show"
     patch "/trips/:id/itinerary/:id" => "itineraries#update"
     delete "/trips/:id/itinerary/:id" => "itineraries#destroy"
