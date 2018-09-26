@@ -15,6 +15,7 @@ class Api::TripsController < ApplicationController
     postal_code: params["postal_code"], 
     start_date: params["start_date"],
     end_date: params["end_date"],
+    image: params["image"],
     user_id: current_user.id
     )
     if @trip.save
@@ -39,6 +40,7 @@ class Api::TripsController < ApplicationController
     @trip.postal_code = params["postal_code"] || @trip.postal_code
     @trip.start_date = params["start_date"] || @trip.start_date
     @trip.end_date = params["end_date"] || @trip.end_date
+    @trip.image = params["image"] || @trip.image
   
     if @trip.save
       render "show.json.jbuilder"
