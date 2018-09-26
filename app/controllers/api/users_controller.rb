@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
+      phone: params[:phone],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
@@ -30,6 +31,7 @@ class Api::UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.first_name = params["first_name"] || @user.first_name
     @user.last_name = params["last_name"] || @user.last_name
+    @user.phone = params["phone"] || @user.phone
     @user.email = params["email"] || @user.email
     @user.password_digest = params["password_digest"] || @user.password_digest
     @user.user_photo = params["user_photo"] || @user.user_photo
