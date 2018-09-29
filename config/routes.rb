@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     patch "/trips/:id" => "trips#update"
     delete "/trips/:id" => "trips#destroy"
 
+    post "/usertrips" => "user_trips#create"
+
     get "/categories" => "categories#index"
     post "/categories" => "categories#create"
 
