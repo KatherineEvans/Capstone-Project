@@ -32,7 +32,9 @@ Rails.application.routes.draw do
     get "/categories" => "categories#index"
     post "/categories" => "categories#create"
 
-    post "/sendtext" => "twilio#index"
+    post "/sendtext" => "twilio#create"
+
+    post "/sendemail" => "sendgrid#create"
 
   end
 end

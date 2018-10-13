@@ -1,8 +1,6 @@
-# require 'twilio-ruby'
-
 class Api::TwilioController < ApplicationController
 
-  def index
+  def create
     account_sid = ENV["ACC_SID"]
     auth_token = ENV["AUTH_TOKEN"]
 
