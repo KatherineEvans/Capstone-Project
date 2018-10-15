@@ -36,7 +36,8 @@ class Api::UsersController < ApplicationController
     @user.email = params["email"] || @user.email
     @user.password_digest = params["password_digest"] || @user.password_digest
     @user.user_photo = params["user_photo"] || @user.user_photo
-  
+    @user.bio = params["bio"] || @user.bio
+
     if @user.save
       render "show.json.jbuilder"
     else
