@@ -8,6 +8,7 @@ json.city trip.city
 json.planner trip.planner.full_name
 json.image trip.image
 json.travelers trip.users
+json.user current_user.id 
 
 json.expenses trip.expenses.order("date asc").each do |expense|
   json.id expense.id

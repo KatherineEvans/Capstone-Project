@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
     get "/travelers" => "users#index"
     post "/travelers" => "users#create"
-    get "/travelers/:id" => "users#show"
+    get "/profile/:id" => "users#show"
     patch "/travelers/:id" => "users#update"
     delete "/travelers/:id" => "users#destroy"
 
