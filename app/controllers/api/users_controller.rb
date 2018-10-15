@@ -35,6 +35,7 @@ class Api::UsersController < ApplicationController
     @user.phone = params["phone"] || @user.phone
     @user.email = params["email"] || @user.email
     @user.password_digest = params["password_digest"] || @user.password_digest
+    @user.password_confirmation = params["password_confirmation"] || @user.password_confirmation
     @user.user_photo = params["user_photo"] || @user.user_photo
     @user.bio = params["bio"] || @user.bio
 
